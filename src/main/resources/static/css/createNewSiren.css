@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+#createSirenForm {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#createSirenForm label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+#createSirenForm input[type="number"],
+#createSirenForm select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#createSirenForm input[type="number"]:focus,
+#createSirenForm select:focus {
+    border-color: #6f42c1; /* purple focus */
+    outline: none;
+}
+
+#createSirenForm input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-left: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#createSirenForm label[for="disabled"] {
+    display: inline-block;
+    margin-left: 6px;
+    font-weight: normal;
+    color: #555;
+}
+
+#createSirenForm button[type="submit"] {
+    background-color: #6f42c1; /* purple */
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+#createSirenForm button[type="submit"]:hover {
+    background-color: #5a32a3;
+}

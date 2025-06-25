@@ -1,0 +1,81 @@
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#sirensBtn {
+    background-color: #007bff;
+}
+
+#firesBtn {
+    background-color: #dc3545;
+}
+
+#createSirensBtn {
+    background-color: #6f42c1;  /* Bootstrap purple */
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#createSirensBtn:hover {
+    background-color: #5a32a3;
+}
+
+#indexBtn {
+    background-color: #28a745; /* Bootstrap green */
+}
+
+/* General button styling */
+#tableWrapper button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+/* Edit button: blue */
+#tableWrapper .edit-btn {
+    background-color: #007bff;
+}
+
+#tableWrapper .edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Delete button: red */
+#tableWrapper .delete-btn {
+    background-color: #dc3545;
+}
+
+#tableWrapper .delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+#updateSirenBtn {
+    background-color: #28a745; /* Bootstrap green */
+}
+
+.red-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
