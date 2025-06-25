@@ -31,7 +31,7 @@ public class FireMapper {
         fire.setLongitude(dto.getLongitude());
         fire.setTimestamp(dto.getTimestamp());
         fire.setClosed(dto.isClosed());
-        // Sirenes are not set here — typically handled by service/repository logic.
+        // Sirenes are attached in FireServiceImpl when creating a fire
         return fire;
     }
 

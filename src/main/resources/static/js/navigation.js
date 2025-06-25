@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "firesBtn": "active-fires.html",
         "sirensBtn": "see-all-sirens.html",
         "indexBtn": "index.html",
-        "createSirensBtn": "create-siren.html"
+        "createSirensBtn": "create-siren.html",
+        "registerFiresBtn": "register-fire.html"
         // edit-btn håndteres separat, da det er knapper genereret dynamisk
     };
 

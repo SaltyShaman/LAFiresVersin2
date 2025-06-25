@@ -105,3 +105,18 @@ button:hover {
 .delete-btn:hover {
     background-color: #c82333;
 }
+
+#registerFiresBtn {
+    background-color: red;     /* Rød baggrund */
+    color: white;              /* Hvid tekst */
+    border: none;             /* Fjern kant */
+    padding: 10px 20px;       /* Indvendig afstand */
+    font-size: 16px;          /* Tekststørrelse */
+    cursor: pointer;          /* Musepeger bliver til hånd */
+    border-radius: 5px;       /* Afrundede hjørner */
+    transition: background-color 0.3s ease; /* Glidende effekt */
+}
+
+#registerFiresBtn:hover {
+    background-color: darkred; /* Mørkere rød ved hover */
+}

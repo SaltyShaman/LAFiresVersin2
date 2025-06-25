@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+#tableWrapper table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 90%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+#tableWrapper th,
+#tableWrapper td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableWrapper th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Zebra-striber */
+#tableWrapper tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#tableWrapper tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #d9534f;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c9302c;
+}

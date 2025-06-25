@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static java.awt.geom.Point2D.distance;
 
@@ -58,6 +60,28 @@ public class FireServiceImpl implements FireService{
 
         return FireMapper.toDTO(fire);
     }
+
+    @Override
+    public List<FireDTO>getAllActiveFires() {
+        List<Fire> activeFires = fireRepository.findByClosedFalse();
+        return activeFires.stream()
+                .map(FireMapper::toDTO)
+                .toList();
+    }
+
+
+    @Override
+    public boolean closeFire(Long fireId) {
+        Optional<Fire> fireOpt = fireRepository.findById(fireId);
+        if (fireOpt.isPresent()) {
+            Fire fire = fireOpt.get();
+            fire.setClosed(true);
+            fireRepository.save(fire);
+            return true;
+        }
+        return false;
+    }
+
 
     private double distance(double lat1, double lon1, double lat2, double lon2) {
         final int R = 6371; // Jordens radius i km

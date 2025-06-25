@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of active fires</title>
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/activeFires.css">
+
+</head>
+<body>
+
+<button id ="indexBtn">Gå tilbage til landing siden</button>
+<button id ="registerFiresBtn">Register en ny brand</button>
+
+<h1>Aktive Brande</h1>
+
+<div id="tableWrapper">
+    <table>
+        <thead>
+        <tr>
+            <th>Fire ID</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Tidspunkt</th>
+            <th>Sirener</th>
+            <th>Handling</th>
+        </tr>
+        </thead>
+        <tbody id="fireTableBody">
+        <!-- Dynamiske rækker indsættes her -->
+        </tbody>
+    </table>
+</div>
+
+
+<script src="../js/navigation.js"></script>
+<script src="../js/showActiveFiresAPI.js"></script>
+
+
+</body>
+</html>
