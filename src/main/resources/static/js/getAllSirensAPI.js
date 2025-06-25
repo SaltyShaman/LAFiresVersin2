@@ -49,9 +49,12 @@ async function deleteSiren(id) {
             method: 'DELETE'
         });
         if (response.ok) {
+            alert(`Sirene with ID ${id} was successfully deleted.`);
             fetchSirens(); // Refresh table
+
         } else {
             console.error("Failed to delete siren with ID:", id);
+            alert(`Failed to delete siren with ID ${id}.`);
         }
     } catch (err) {
         console.error("Delete error:", err);
