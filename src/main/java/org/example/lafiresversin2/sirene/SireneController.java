@@ -29,5 +29,12 @@ public class SireneController {
         return ResponseEntity.ok(sirens);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSirene(@PathVariable Long id) {
+        sireneService.deleteSiren(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
 
 }
