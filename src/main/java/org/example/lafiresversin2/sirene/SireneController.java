@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -19,6 +21,12 @@ public class SireneController {
     public ResponseEntity<SireneDTO> createSirene(@RequestBody SireneDTO sireneDTO) {
         SireneDTO createdSirene = sireneService.createSirene(sireneDTO);
         return new ResponseEntity<>(createdSirene, HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<SireneDTO>> getAllSirens() {
+        List<SireneDTO> sirens = sireneService.getAllSirens();
+        return ResponseEntity.ok(sirens);
     }
 
 
