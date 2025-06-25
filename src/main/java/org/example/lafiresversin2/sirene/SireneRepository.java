@@ -1,11 +1,9 @@
-package org.example.lafiresversin2.fire;
-
+package org.example.lafiresversin2.sirene;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FireRepository extends JpaRepository<Fire, Long> {
-
+public interface SireneRepository extends JpaRepository<Sirene, Long> {
 
 }
