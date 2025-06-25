@@ -54,5 +54,18 @@ public class SireneServiceImpl implements SireneService {
         sireneRepository.delete(sirene);
     }
 
+    @Override
+    public void updateSiren(Long sireneId, SireneDTO sireneDTO) {
+        Sirene existingSirene = sireneRepository.findById(sireneId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Sirene not found with id " + sireneId));
+
+    existingSirene.setLatitude(sireneDTO.getLatitude());
+    existingSirene.setLongitude(sireneDTO.getLongitude());
+    existingSirene.setStatus(sireneDTO.getStatus());
+
+    sireneRepository.save(existingSirene);
+    }
+
+
 
 }

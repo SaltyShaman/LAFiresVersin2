@@ -36,5 +36,12 @@ public class SireneController {
     }
 
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateSirene(@PathVariable Long id,
+                                             @RequestBody SireneDTO sireneDTO) {
+        sireneService.updateSiren(id, sireneDTO);
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

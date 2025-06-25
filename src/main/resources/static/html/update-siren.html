@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Update Siren</title>
+
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/updateSirene.css">
+
+</head>
+<body>
+<h1>Update Siren</h1>
+
+<button id ="sirensBtn">Oversigt over sirener</button>
+
+<form id="updateSireneForm">
+    <label>ID: <span id="sireneId"></span></label><br />
+    <label>Latitude: <input type="number" step="any" id="latitude" name="latitude" required></label><br />
+    <label>Longitude: <input type="number" step="any" id="longitude" name="longitude" required></label><br />
+    <label for="status">Status:</label>
+    <select id="status" name="status" required>
+        <option value="IDLE">IDLE</option>
+        <option value="ACTIVE">ACTIVE</option>
+    </select>    <button type="submit">Save</button>
+</form>
+
+<script src="../js/updateSirenAPI.js"></script>
+<script src="../js/navigation.js"></script>
+
+
+</body>
+</html>

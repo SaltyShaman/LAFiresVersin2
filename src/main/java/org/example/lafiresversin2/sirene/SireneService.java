@@ -7,4 +7,5 @@ public interface SireneService {
     SireneDTO createSirene(SireneDTO sireneDTO);
     List<SireneDTO> getAllSirens();
     void deleteSiren(Long sireneId);
+    void updateSiren(Long sireneId, SireneDTO sireneDTO);
 }

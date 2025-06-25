@@ -29,15 +29,14 @@ async function fetchSirens() {
             });
         });
 
-        // Handle edit
+        // Handle edit - redirect to update-siren.html with sirenId query param
         document.querySelectorAll('.edit-btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 const id = e.target.dataset.id;
                 console.log("Edit siren with ID:", id);
-                // You can open a modal or redirect to an edit form here
+                window.location.href = `update-siren.html?sirenId=${id}`;
             });
         });
-
     } catch (err) {
         console.error("Error fetching sirens:", err);
     }

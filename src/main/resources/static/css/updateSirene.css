@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+form#updateSireneForm {
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    text-align: left; /* aligns labels and inputs nicely */
+}
+
+form#updateSireneForm label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+form#updateSireneForm input[type="number"],
+form#updateSireneForm input[type="text"],
+form#updateSireneForm select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form#updateSireneForm input[type="number"]:focus,
+form#updateSireneForm input[type="text"]:focus,
+form#updateSireneForm select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+form#updateSireneForm button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#updateSireneForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the siren ID label */
+#sireneId {
+    font-weight: normal;
+    margin-left: 8px;
+    color: #555;
+}
+
+/* Style the "Oversigt over sirener" button */
+#sirensBtn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+#sirensBtn:hover {
+    background-color: #1e7e34;
+}
+
+
+form#updateSireneForm select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form#updateSireneForm select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
