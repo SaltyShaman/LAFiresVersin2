@@ -15,10 +15,12 @@ public class SireneServiceImpl implements SireneService {
 
     private final SireneRepository sireneRepository;
     private final FireRepository fireRepository;
+    private final SireneDeleteService sireneDeleteService;
 
-    public SireneServiceImpl(SireneRepository sireneRepository, FireRepository fireRepository) {
+    public SireneServiceImpl(SireneRepository sireneRepository, FireRepository fireRepository, SireneDeleteService sireneDeleteService ) {
         this.sireneRepository = sireneRepository;
         this.fireRepository = fireRepository;
+        this.sireneDeleteService = sireneDeleteService;
     }
 
     @Override
@@ -38,20 +40,13 @@ public class SireneServiceImpl implements SireneService {
 
     @Override
     public void deleteSiren(Long sireneId) {
-        Sirene sirene = sireneRepository.findById(sireneId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Sirene not found with id " + sireneId));
-
-        //Remove fires from sirene on an individual level
-        for (Fire fire : sirene.getFires()) {
-            fire.getSirenes().remove(sirene);
+        try {
+            sireneDeleteService.deleteSireneIfNoActiveFire(sireneId);
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
-
-        sirene.getFires().clear();
-
-        // Optional but recommended: save the affected fires to persist the update
-        fireRepository.saveAll(sirene.getFires());
-
-        sireneRepository.delete(sirene);
     }
 
     @Override
