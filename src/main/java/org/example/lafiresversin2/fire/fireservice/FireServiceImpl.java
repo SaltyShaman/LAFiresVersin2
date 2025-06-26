@@ -1,7 +1,11 @@
-package org.example.lafiresversin2.fire;
+package org.example.lafiresversin2.fire.fireservice;
 
 
 import jakarta.transaction.Transactional;
+import org.example.lafiresversin2.fire.fireentity.Fire;
+import org.example.lafiresversin2.fire.fireentity.FireDTO;
+import org.example.lafiresversin2.fire.fireentity.FireMapper;
+import org.example.lafiresversin2.fire.firerepository.FireRepository;
 import org.example.lafiresversin2.sirene.sireneentity.SirenStatus;
 import org.example.lafiresversin2.sirene.sireneentity.Sirene;
 import org.example.lafiresversin2.sirene.sirenerepository.SireneRepository;
@@ -12,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FireServiceImpl implements FireService{
+public class FireServiceImpl implements FireService {
 
     @Autowired
     private FireRepository fireRepository;

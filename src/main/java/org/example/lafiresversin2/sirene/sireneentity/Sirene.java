@@ -2,7 +2,7 @@ package org.example.lafiresversin2.sirene.sireneentity;
 
 
 import jakarta.persistence.*;
-import org.example.lafiresversin2.fire.Fire;
+import org.example.lafiresversin2.fire.fireentity.Fire;
 
 import java.util.HashSet;
 import java.util.Set;

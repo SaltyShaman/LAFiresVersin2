@@ -1,7 +1,7 @@
 package org.example.lafiresversin2.sirene.sireneservice;
 
 
-import org.example.lafiresversin2.fire.FireRepository;
+import org.example.lafiresversin2.fire.firerepository.FireRepository;
 import org.example.lafiresversin2.sirene.sireneentity.Sirene;
 import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
 import org.example.lafiresversin2.sirene.sireneentity.SireneMapper;
@@ -52,7 +52,6 @@ public class SireneServiceImpl implements SireneService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
-
 
     @Override
     public void updateSiren(Long sireneId, SireneDTO sireneDTO) {

@@ -1,41 +1,25 @@
-package org.example.lafiresversin2.fire;
+package org.example.lafiresversin2.fire.fireentity;
 
-
-import jakarta.persistence.*;
-import org.example.lafiresversin2.sirene.sireneentity.Sirene;
+import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-public class Fire {
+public class FireDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fireId;
-
     private double latitude;
     private double longitude;
-
-    private LocalDateTime timestamp; //To do statisstiks later on
-
+    private LocalDateTime timestamp;
     private boolean closed;
+    private Set<SireneDTO> sirenes;
 
-    @ManyToMany
-    @JoinTable(
-            name = "fire_sirene",
-            joinColumns = @JoinColumn(name = "fire_id"),
-            inverseJoinColumns = @JoinColumn(name = "sirene_id")
-    )
-    private Set<Sirene> sirenes = new HashSet<>();
-
-    public Fire() {
+    public FireDTO() {
     }
 
-    public Fire(Long fireId, double latitude,
-                double longitude, LocalDateTime timestamp,
-                boolean closed, Set<Sirene> sirenes) {
+    public FireDTO(Long fireId, double latitude, double longitude,
+                   LocalDateTime timestamp, boolean closed,
+                   Set<SireneDTO> sirenes) {
         this.fireId = fireId;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -84,11 +68,11 @@ public class Fire {
         this.closed = closed;
     }
 
-    public Set<Sirene> getSirenes() {
+    public Set<SireneDTO> getSirenes() {
         return sirenes;
     }
 
-    public void setSirenes(Set<Sirene> sirenes) {
+    public void setSirenes(Set<SireneDTO> sirenes) {
         this.sirenes = sirenes;
     }
 }

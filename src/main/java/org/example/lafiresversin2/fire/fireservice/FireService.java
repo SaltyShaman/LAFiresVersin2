@@ -1,4 +1,6 @@
-package org.example.lafiresversin2.fire;
+package org.example.lafiresversin2.fire.fireservice;
+
+import org.example.lafiresversin2.fire.fireentity.FireDTO;
 
 import java.util.List;
 

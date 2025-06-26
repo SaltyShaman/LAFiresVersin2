@@ -1,7 +1,7 @@
 package org.example.lafiresversin2.config;
 import jakarta.annotation.PostConstruct;
-import org.example.lafiresversin2.fire.Fire;
-import org.example.lafiresversin2.fire.FireRepository;
+import org.example.lafiresversin2.fire.fireentity.Fire;
+import org.example.lafiresversin2.fire.firerepository.FireRepository;
 import org.example.lafiresversin2.sirene.sirenerepository.SireneRepository;
 import org.example.lafiresversin2.sirene.sireneentity.Sirene;
 import org.springframework.context.annotation.DependsOn;

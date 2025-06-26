@@ -1,6 +1,6 @@
 package org.example.lafiresversin2.sirene.sireneentity;
 
-import org.example.lafiresversin2.fire.Fire;
+import org.example.lafiresversin2.fire.fireentity.Fire;
 
 import java.util.Set;
 import java.util.stream.Collectors;

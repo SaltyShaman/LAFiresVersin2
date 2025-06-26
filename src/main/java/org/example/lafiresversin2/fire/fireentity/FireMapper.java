@@ -1,4 +1,4 @@
-package org.example.lafiresversin2.fire;
+package org.example.lafiresversin2.fire.fireentity;
 
 import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
 import org.example.lafiresversin2.sirene.sireneentity.SireneMapper;
