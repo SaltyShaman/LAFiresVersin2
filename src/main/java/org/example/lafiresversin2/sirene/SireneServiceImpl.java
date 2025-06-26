@@ -31,9 +31,9 @@ public class SireneServiceImpl implements SireneService {
     @Override
     public List<SireneDTO> getAllSirens(){
         List<Sirene> sirenes = sireneRepository.findAll();
-        return sirenes.stream().
-                map(SireneMapper::toDTO).
-                collect(Collectors.toList());
+        return sirenes.stream()
+                        .map(SireneMapper::toDTO)
+                        .collect(Collectors.toList());
     }
 
     @Override
