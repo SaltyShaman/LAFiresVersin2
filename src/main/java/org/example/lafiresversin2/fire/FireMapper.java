@@ -1,7 +1,7 @@
 package org.example.lafiresversin2.fire;
 
-import org.example.lafiresversin2.sirene.SireneDTO;
-import org.example.lafiresversin2.sirene.SireneMapper;
+import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
+import org.example.lafiresversin2.sirene.sireneentity.SireneMapper;
 
 import java.util.Set;
 import java.util.stream.Collectors;

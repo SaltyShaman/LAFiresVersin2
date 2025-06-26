@@ -47,17 +47,20 @@ async function deleteSiren(id) {
         const response = await fetch(`http://localhost:8080/sirens/${id}`, {
             method: 'DELETE'
         });
+
         if (response.ok) {
             alert(`Sirene with ID ${id} was successfully deleted.`);
             fetchSirens(); // Refresh table
-
         } else {
-            console.error("Failed to delete siren with ID:", id);
-            alert(`Failed to delete siren with ID ${id}.`);
+            const errorData = await response.json(); // Læs JSON med fejlbesked
+            alert(`Sletning mislykkedes: ${errorData.message}`);
+            console.error("Fejl:", errorData);
         }
     } catch (err) {
         console.error("Delete error:", err);
+        alert("Uventet fejl ved sletning.");
     }
 }
+
 
 fetchSirens();

@@ -1,4 +1,6 @@
-package org.example.lafiresversin2.sirene;
+package org.example.lafiresversin2.sirene.sireneservice;
+
+import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
 
 import java.util.List;
 

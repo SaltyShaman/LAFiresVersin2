@@ -2,9 +2,9 @@ package org.example.lafiresversin2.config;
 
 
 import jakarta.annotation.PostConstruct;
-import org.example.lafiresversin2.sirene.SirenStatus;
-import org.example.lafiresversin2.sirene.Sirene;
-import org.example.lafiresversin2.sirene.SireneRepository;
+import org.example.lafiresversin2.sirene.sireneentity.SirenStatus;
+import org.example.lafiresversin2.sirene.sireneentity.Sirene;
+import org.example.lafiresversin2.sirene.sirenerepository.SireneRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;

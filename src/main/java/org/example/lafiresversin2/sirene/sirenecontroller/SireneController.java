@@ -1,6 +1,8 @@
-package org.example.lafiresversin2.sirene;
+package org.example.lafiresversin2.sirene.sirenecontroller;
 
 
+import org.example.lafiresversin2.sirene.sireneservice.SireneService;
+import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

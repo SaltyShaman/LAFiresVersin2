@@ -1,9 +1,11 @@
-package org.example.lafiresversin2.sirene;
+package org.example.lafiresversin2.sirene.sireneservice;
 
 
 import jakarta.transaction.Transactional;
 import org.example.lafiresversin2.exception.SireneOperationNotAllowedException;
 import org.example.lafiresversin2.fire.FireRepository;
+import org.example.lafiresversin2.sirene.sireneentity.Sirene;
+import org.example.lafiresversin2.sirene.sirenerepository.SireneRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -2,7 +2,7 @@ package org.example.lafiresversin2.fire;
 
 
 import jakarta.persistence.*;
-import org.example.lafiresversin2.sirene.Sirene;
+import org.example.lafiresversin2.sirene.sireneentity.Sirene;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;

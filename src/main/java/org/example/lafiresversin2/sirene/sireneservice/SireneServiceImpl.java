@@ -1,8 +1,11 @@
-package org.example.lafiresversin2.sirene;
+package org.example.lafiresversin2.sirene.sireneservice;
 
 
-import org.example.lafiresversin2.fire.Fire;
 import org.example.lafiresversin2.fire.FireRepository;
+import org.example.lafiresversin2.sirene.sireneentity.Sirene;
+import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
+import org.example.lafiresversin2.sirene.sireneentity.SireneMapper;
+import org.example.lafiresversin2.sirene.sirenerepository.SireneRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -16,11 +19,14 @@ public class SireneServiceImpl implements SireneService {
     private final SireneRepository sireneRepository;
     private final FireRepository fireRepository;
     private final SireneDeleteService sireneDeleteService;
+    private final SireneUpdateService sireneUpdateService;
 
-    public SireneServiceImpl(SireneRepository sireneRepository, FireRepository fireRepository, SireneDeleteService sireneDeleteService ) {
+    public SireneServiceImpl(SireneRepository sireneRepository, FireRepository fireRepository,
+                             SireneDeleteService sireneDeleteService, SireneUpdateService sireneUpdateService ) {
         this.sireneRepository = sireneRepository;
         this.fireRepository = fireRepository;
         this.sireneDeleteService = sireneDeleteService;
+        this.sireneUpdateService = sireneUpdateService;
     }
 
     @Override
@@ -44,21 +50,19 @@ public class SireneServiceImpl implements SireneService {
             sireneDeleteService.deleteSireneIfNoActiveFire(sireneId);
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
+
     @Override
     public void updateSiren(Long sireneId, SireneDTO sireneDTO) {
-        Sirene existingSirene = sireneRepository.findById(sireneId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Sirene not found with id " + sireneId));
-
-    existingSirene.setLatitude(sireneDTO.getLatitude());
-    existingSirene.setLongitude(sireneDTO.getLongitude());
-    existingSirene.setStatus(sireneDTO.getStatus());
-
-    sireneRepository.save(existingSirene);
+        try {
+            sireneUpdateService.updateSireneIfNoActiveFire(sireneId, sireneDTO);
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 
 

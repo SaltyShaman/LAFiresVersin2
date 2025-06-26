@@ -1,6 +1,6 @@
 package org.example.lafiresversin2.fire;
 
-import org.example.lafiresversin2.sirene.SireneDTO;
+import org.example.lafiresversin2.sirene.sireneentity.SireneDTO;
 
 import java.time.LocalDateTime;
 import java.util.Set;

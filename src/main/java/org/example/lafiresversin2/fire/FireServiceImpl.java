@@ -2,17 +2,14 @@ package org.example.lafiresversin2.fire;
 
 
 import jakarta.transaction.Transactional;
-import org.example.lafiresversin2.sirene.SirenStatus;
-import org.example.lafiresversin2.sirene.Sirene;
-import org.example.lafiresversin2.sirene.SireneRepository;
+import org.example.lafiresversin2.sirene.sireneentity.SirenStatus;
+import org.example.lafiresversin2.sirene.sireneentity.Sirene;
+import org.example.lafiresversin2.sirene.sirenerepository.SireneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-
-import static java.awt.geom.Point2D.distance;
 
 @Service
 public class FireServiceImpl implements FireService{

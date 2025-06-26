@@ -1,4 +1,4 @@
-package org.example.lafiresversin2.sirene;
+package org.example.lafiresversin2.sirene.sireneentity;
 
 import java.util.Set;
 
