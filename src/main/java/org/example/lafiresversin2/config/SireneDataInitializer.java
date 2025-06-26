@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 
-@Component
+@Component("sireneDataInitializer")
 public class SireneDataInitializer {
 
     private final SireneRepository sireneRepository;
@@ -38,11 +38,11 @@ public class SireneDataInitializer {
                 {55.6758, 12.5688}
         };
 
-        for (double[] location : locations) {
+        for (int i = 0; i < locations.length; i++) {
             Sirene sirene = new Sirene();
-            sirene.setLatitude(location[0]);
-            sirene.setLongitude(location[1]);
-            sirene.setStatus(SirenStatus.IDLE);
+            sirene.setLatitude(locations[i][0]);
+            sirene.setLongitude(locations[i][1]);
+            sirene.setStatus(i < 2 ? SirenStatus.ACTIVE : SirenStatus.IDLE); // First 2 = ACTIVE
             sirene.setFires(new HashSet<>());  // no fires yet
             sireneRepository.save(sirene);
         }
