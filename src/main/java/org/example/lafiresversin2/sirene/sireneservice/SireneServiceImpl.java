@@ -60,8 +60,6 @@ public class SireneServiceImpl implements SireneService {
             sireneUpdateService.updateSireneIfNoActiveFire(sireneId, sireneDTO);
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 

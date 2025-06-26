@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (response.ok) {
                 alert("Siren updated successfully!");
-                // Optionally redirect back to siren list
                 window.location.href = "see-all-sirens.html";
             } else {
-                alert("Failed to update siren.");
+                const errorData = await response.json();
+                alert("Opdatering mislykkedes: " + (errorData.message || "Ukendt fejl"));
             }
         } catch (err) {
             alert("Error updating siren.");
