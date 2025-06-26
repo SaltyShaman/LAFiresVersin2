@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const longitudeInput = document.getElementById('longitude');
     const statusInput = document.getElementById('status');
     const form = document.getElementById('updateSireneForm');
+    const deleteBtn = document.getElementById('deleteBtn');
 
-    // Show ID
+    // Vis sirene-id
     sireneIdSpan.textContent = sirenId;
 
     try {
-        // Fetch siren data
         const res = await fetch(`http://localhost:8080/sirens`);
         const sirens = await res.json();
         const siren = sirens.find(s => s.sireneId == sirenId);
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        // Populate form fields
         latitudeInput.value = siren.latitude;
         longitudeInput.value = siren.longitude;
         statusInput.value = siren.status;
@@ -66,4 +65,27 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.error(err);
         }
     });
+
+    deleteBtn.addEventListener('click', async () => {
+        const confirmDelete = confirm("Er du sikker på, at du vil slette denne sirene?");
+        if (!confirmDelete) return;
+
+        try {
+            const res = await fetch(`http://localhost:8080/sirens/${sirenId}`, {
+                method: 'DELETE'
+            });
+
+            if (res.ok) {
+                alert("Sirene slettet.");
+                window.location.href = "see-all-sirens.html";
+            } else {
+                const errorData = await res.json();
+                alert("Sletning mislykkedes: " + (errorData.message || "Ukendt fejl"));
+            }
+        } catch (err) {
+            alert("Fejl ved sletning.");
+            console.error(err);
+        }
+    });
 });
+
