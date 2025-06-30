@@ -22,7 +22,7 @@ public class SireneServiceImpl implements SireneService {
     private final SireneUpdateService sireneUpdateService;
 
     public SireneServiceImpl(SireneRepository sireneRepository, FireRepository fireRepository,
-                             SireneDeleteService sireneDeleteService, SireneUpdateService sireneUpdateService ) {
+                             SireneDeleteService sireneDeleteService, SireneUpdateService sireneUpdateService) {
         this.sireneRepository = sireneRepository;
         this.fireRepository = fireRepository;
         this.sireneDeleteService = sireneDeleteService;

@@ -22,6 +22,7 @@ document.getElementById('createSirenForm').addEventListener('submit', async func
             document.getElementById('message').textContent = 'Sirene created with ID: ' + created.sireneId;
             this.reset();
         } else {
+            console.log("Error: " + reponse.statusText);
             document.getElementById('message').textContent = 'Error creating sirene: ' + response.statusText;
         }
     } catch (error) {
