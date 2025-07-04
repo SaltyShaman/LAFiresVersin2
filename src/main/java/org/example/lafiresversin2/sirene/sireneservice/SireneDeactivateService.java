@@ -18,7 +18,6 @@ public class SireneDeactivateService {
 
     private static final Logger logger = LoggerFactory.getLogger(SireneDeactivateService.class);
 
-
     private final SireneRepository sireneRepository;
     private final FireRepository fireRepository;
 
@@ -27,25 +26,19 @@ public class SireneDeactivateService {
         this.fireRepository = fireRepository;
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 60000)
     @Transactional
     public void deactivateSirenerWithoutFire() {
         logger.info("Scheduled task: deactivateSirenerWithoutFire kører...");
-        List<Sirene> allSirens = sireneRepository.findAll();
 
-        logger.info("Antal af sirener: " + allSirens.size());
-
-        for (Sirene sirene : allSirens) {
-            boolean hasActiveFires = sirene.getFires().stream()
-                    .anyMatch(fire -> !fire.isClosed());  // Findes der nogen aktive brande?
-
-            if (!hasActiveFires && sirene.getStatus() != SirenStatus.IDLE) {
-                logger.info("Sirene ID: " + sirene.getSireneId() + " deaktiveres, status: " + sirene.getStatus());
-                sirene.setStatus(SirenStatus.IDLE);
-                sireneRepository.save(sirene);
-            }
+        try {
+            int deactivatedSirens = sireneRepository.bulkDeactivateSirensWithoutOpenFires();
+            logger.info("Antal sirener deaktiveret: " + deactivatedSirens);
+        } catch (Exception e) {
+            logger.error("Fejl ved deaktivering af sirener", e);
         }
     }
+
 
 }
 
